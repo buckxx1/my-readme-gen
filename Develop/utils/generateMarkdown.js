@@ -21,6 +21,24 @@ const renderLicenseBadge = licenseName => {
 }
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+const generateLicense = LicenseText => {
+  if (!LicenseText) {
+    return '';
+  }
+  return `# License 
+${badgesText}  
+  `;
+}
+// Making a features section
+const generateFeatures = featuresText => {
+  if (!featuresText) {
+    return '';
+  }
+  return `# features
+ ${featuresText} 
+  `;
+}
+// table of contents section 
 const tableOfContentsLicense = license => {
   if (!license) {
     return '';
@@ -45,37 +63,17 @@ const tableOfContentsContributing = contributing => {
   }
   return `* [Contributing](#contributing)`
 }
-const tableOfContentsTests = tests => {
-  if (!tests) {
-    return '';
-  }
-  return `* [Tests](#tests)`
-}
-// table of contents section 
-const tableOfContentsLicense = license => {
-  if (!license) {
-    return '';
-  }
-  return `* [License](#license)`
-}
-const tableOfContentsBadges = badges => {
-  if (!badges) {
-    return '';
-  }
-  return `* [Badges](#badges)`
-}
-const tableOfContentsFeatures = features => {
-  if (!features) {
-    return '';
-  }
-  return `* [Features](#features)`
-}
 
 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+const tableOfContentsLicense = license => {
+  if (!license) {
+    return '';
+  }
+  return `# [License](#license)`
+}
 
 // TODO: Create a function to generate markdown for README
 module.exports = generateMarkdown => {
